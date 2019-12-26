@@ -31,6 +31,7 @@ and send test email.
 ![alt](https://raw.githubusercontent.com/lucafaggianelli/sails-hook-bucaniere/master/docs/preview-template.png)
 
 # Added acces check for super admins
+```
 // security/isSuperAdmin
 async function checkAccess(req, res) {
     if(!req.session.userId)
@@ -47,7 +48,7 @@ async function checkAccess(req, res) {
   module.exports = {
     checkAccess
   }
-
+```
 
 # More features to come!
 
