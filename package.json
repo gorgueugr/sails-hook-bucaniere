@@ -1,7 +1,46 @@
 {
-  "name": "sails-hook-bucaniere",
-  "version": "0.5.2",
+  "_from": "sails-hook-bucaniere",
+  "_id": "sails-hook-bucaniere@0.5.2",
+  "_inBundle": false,
+  "_integrity": "sha512-qb4kB1iWwoReriBs5fF36zdJ4mD38MfJuV87Hu2bEWbNBtkjtCaNkM2IpzLJXKtEobPGzywBgkhOjc+me2d6KA==",
+  "_location": "/sails-hook-bucaniere",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "sails-hook-bucaniere",
+    "name": "sails-hook-bucaniere",
+    "escapedName": "sails-hook-bucaniere",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sails-hook-bucaniere/-/sails-hook-bucaniere-0.5.2.tgz",
+  "_shasum": "83dae3debe4928e81599490f0db1b3f516532f4c",
+  "_spec": "sails-hook-bucaniere",
+  "_where": "C:\\Users\\soler\\Desktop\\sails\\uni",
+  "author": {
+    "name": "Luca Faggianelli"
+  },
+  "bugs": {
+    "url": "https://github.com/lucafaggianelli/sails-hook-bucaniere/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Admin panel for Sails apps",
+  "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-config-standard": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "homepage": "https://github.com/lucafaggianelli/sails-hook-bucaniere#readme",
   "keywords": [
     "sails-hook",
     "sails",
@@ -10,22 +49,18 @@
     "admin",
     "admin-panel"
   ],
-  "repository": "https://github.com/lucafaggianelli/sails-hook-bucaniere",
+  "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "sails-hook-bucaniere",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucafaggianelli/sails-hook-bucaniere.git"
   },
   "sails": {
     "isHook": true
   },
-  "author": "Luca Faggianelli",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^6.2.1",
-    "eslint-config-standard": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.5.2"
 }

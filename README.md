@@ -30,6 +30,25 @@ and send test email.
 
 ![alt](https://raw.githubusercontent.com/lucafaggianelli/sails-hook-bucaniere/master/docs/preview-template.png)
 
+# Added acces check for super admins
+// security/isSuperAdmin
+async function checkAccess(req, res) {
+    if(!req.session.userId)
+        return false
+    var user = await User.findOne({id:req.session.userId})
+    if(user.isSuperAdmin){
+        return true;
+    }
+
+    return false;
+
+  }
+  
+  module.exports = {
+    checkAccess
+  }
+
+
 # More features to come!
 
 Bucaniere is still WIP, but in full development, please submit feature requests and issues, very appreciated!

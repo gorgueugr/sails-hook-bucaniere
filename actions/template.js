@@ -1,6 +1,12 @@
 const { renderView } = require('./utils')
+const { checkAccess} = require('../security/isSuperAdmin')
 
 module.exports = async function (sails, req, res) {
+
+  if(!await checkAccess(req,res)){
+    return res.view(500)
+  }
+
   const url = require('url')
   const template = req.param('template')
   const templateData = req.param('params') ? JSON.parse(req.param('params')) : {}

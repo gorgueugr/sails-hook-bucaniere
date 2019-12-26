@@ -21,6 +21,8 @@ module.exports = function (sails) {
         return cb()
       }
 
+    
+
       // Set up listener to bind shadow routes when the time is right.
       //
       // Always wait until after router has bound static routes.
@@ -48,32 +50,38 @@ module.exports = function (sails) {
       }
 
       sails.after(eventsToWaitFor, () => {
-        sails.router.bind(
-          '/admin',
-          (req, res) => require('./actions/dashboard')(sails, req, res))
+        
+          sails.router.bind(
+            '/admin',
+            (req, res) => require('./actions/dashboard')(sails, req, res),'get','policy:false')
+  
+          sails.router.bind(
+            '/admin/email-templates/:template',
+            (req, res) => require('./actions/template')(sails, req, res),
+            'get')
+  
+          sails.router.bind(
+            '/admin/email-templates/:template',
+            (req, res) => require('./actions/template')(sails, req, res),
+            'post')
+  
+          sails.router.bind(
+            '/admin/logs/:action?',
+            (req, res) => require('./actions/logs')(sails, req, res))
+  
+          sails.router.bind(
+            '/admin/:model',
+            (req, res) => require('./actions/model')(sails, req, res))
+            
+          sails.log.info('Bucaniere loaded')
 
-        sails.router.bind(
-          '/admin/email-templates/:template',
-          (req, res) => require('./actions/template')(sails, req, res),
-          'get')
-
-        sails.router.bind(
-          '/admin/email-templates/:template',
-          (req, res) => require('./actions/template')(sails, req, res),
-          'post')
-
-        sails.router.bind(
-          '/admin/logs/:action?',
-          (req, res) => require('./actions/logs')(sails, req, res))
-
-        sails.router.bind(
-          '/admin/:model',
-          (req, res) => require('./actions/model')(sails, req, res))
-
-        sails.log.info('Bucaniere loaded')
       })
 
       return cb()
+    },
+    policies : {
+      '*': false,  
     }
+
   }
 }
